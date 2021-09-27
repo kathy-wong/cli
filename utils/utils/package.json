@@ -1,6 +1,6 @@
 {
   "name": "utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Kathy <913172755@qq.com>",
   "homepage": "",
@@ -13,8 +13,8 @@
   "files": [
     "lib"
   ],
-  "dependencies":{
-    "@kathy-cli-test/utils":"file:../utils"
+  "dependencies": {
+    "@kathy-cli-test/utils": "file:../utils"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
