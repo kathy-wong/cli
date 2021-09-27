@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "utils/*",
+    "models/*",
+    "core/*",
+    "commands/*"
+  ],
+  "version": "independent"
+}
