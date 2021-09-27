@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "@kathy-cli-test/core",
   "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Kathy <913172755@qq.com>",
@@ -24,5 +24,6 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
-  }
+  },
+  "gitHead": "8b34598031e1e92cee8d4916bd98b47082cd28a6"
 }
