@@ -1,6 +1,6 @@
 {
-  "name": "@kathy-cli-test/core",
-  "version": "0.0.2",
+  "name": "@kathy-test/core",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "author": "Kathy <913172755@qq.com>",
   "homepage": "",
@@ -17,13 +17,27 @@
     "lib"
   ],
   "dependencies": {
-    "@kathy-cli-test/utils": "file:../../utils/utils",
+    "@kathy-test/getNpmInfo": "file:../../utils/get-npm-info",
+    "@kathy-test/log": "file:../../utils/log",
+    "@kathy-test/utils": "file:../../utils/utils",
+    "@kathy-test/init": "file:../../commands/init",
+    "@kathy-test/exec": "file:../exec",
+    "colors": "^1.4.0",
+    "commander": "^8.3.0",
+    "docenv": "^2.0.6",
     "import-local": "^3.0.2",
-    "kathy-cli-test": "^1.0.0",
-    "npmlog": "^5.0.1"
+    "minimist": "^1.2.5",
+    "npmlog": "^5.0.1",
+    "path-exists": "^4.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.3.5",
+    "userhome": "^1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "8b34598031e1e92cee8d4916bd98b47082cd28a6"
+  "gitHead": "69482a9343a1b3e43bb91818bd4848de43ac524f",
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
 }
