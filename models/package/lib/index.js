@@ -36,14 +36,19 @@ class Package{
     }
     async install(){
         await this.prepare()
+        log.verbose(this.targetPath)
+        log.verbose(this.storePath)
+        log.verbose('install start')
 
         npminstall({
             root:this.targetPath,
             pkgs:[
-                {name:'@kathy-test/init',version:this.version }
+                {name:'init',version:'1.0.0' }
             ],
             registry:getDefaultRegistry(),
             storeDir:this.storePath
+        }).catch(e=>{
+            console.log(e)
         })
 
     }

@@ -43,8 +43,8 @@ module.exports = exec;
             // pkg.update()
             pkg.install()
         }else{
-            log.verbose('install')
-            pkg.install()
+            // log.verbose('install')
+            // pkg.install()
         }
     }else{
         const pkg =new Package({
