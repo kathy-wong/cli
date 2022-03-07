@@ -24,6 +24,12 @@
     "url": "https://github.com/kathy-wong/cli/issues"
   },
   "dependencies": {
-    "@kathy-test/utils": "file:../../utils/utils"
+    "@kahty-test/format-path": "file:../../utils/format-path",
+    "@kahty-test/log": "file:../../utils/log",
+    "@kathy-test/get-npm-info": "file:../../utils/get-npm-info",
+    "@kathy-test/utils": "file:../../utils/utils",
+    "npminstall": "^5.5.0",
+    "path-exists": "^4.0.0",
+    "pkg-dir": "^5.0.0"
   }
 }

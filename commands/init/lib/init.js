@@ -1,12 +1,13 @@
 'use strict';
 
+const log = require('@kathy-test/log')
 module.exports = init;
 
-function init(name,status) {
+function init() {
+    log.verbose('init')
+    console.log(arguments)
 
     // console.log('process',process)
 
-    console.log('init test111',name,status)
-    console.log(process.env.CLI_TARGET_PATH)
     // TODO
 }

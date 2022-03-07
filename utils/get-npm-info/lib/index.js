@@ -6,6 +6,8 @@ const urlJoin = require('url-join')
 
 module.exports = {
   getServerNpmVersions,
+  getDefaultRegistry,
+  getNpmLatestVersion
 }
 
 function getNpmInfo(pkgName, registry) {
@@ -55,4 +57,16 @@ async function getServerNpmVersions(baseVersion, pkgName, registry) {
 }
 function getDefaultRegistry(isOriginal = true) {
   return isOriginal ? 'https://registry.npmjs.org' : 'https://registry.npm.taobao.org'
+}
+
+
+async function getNpmLatestVersion(pkgName,registry){
+
+  const versions = await getNpmVersions(pkgName, registry)
+
+    console.log(versions,'versions')
+
+ const newVersion = versions.sort((a, b) => (semver.gt(b, a) ? 1 : -1))
+  if (newVersion && newVersion.length > 0) return newVersion[0]
+  return null
 }

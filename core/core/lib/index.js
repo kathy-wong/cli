@@ -58,7 +58,7 @@ function registerCommand() {
   program
     .command('init [projectName]')
     .option('-f, --force', '是否强制初始化项目')
-      .action(exec)
+      .action( exec)
 
   // 开启debug模式
   program.on('option:debug', function() {

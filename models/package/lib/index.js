@@ -1,6 +1,13 @@
 'use strict';
-
+const path = require('path')
 const utils = require("@kathy-test/utils")
+const pkgDir = require('pkg-dir').sync
+const formatPath = require('@kahty-test/format-path')
+const npminstall = require('npminstall')
+const {getDefaultRegistry,getNpmLatestVersion} = require('@kathy-test/get-npm-info')
+const log = require('@kahty-test/log')
+
+const pathExists = require('path-exists').sync
 
 
 
@@ -17,14 +24,51 @@ class Package{
         console.log('init pkg')
         this.targetPath = options.targetPath
         this.homePath = options.homePath
-        // this.version=options.version
+        this.storePath = options.storePath
+        this.pkgName = options.pkgName
+        this.version=options.version
         // this.path = options.path
     }
-    install(){
+    async prepare(){
+        if(this.version==='latest'){
+            this.version =  await getNpmLatestVersion(this.pkgName)
+        }
+    }
+    async install(){
+        await this.prepare()
+
+        npminstall({
+            root:this.targetPath,
+            pkgs:[
+                {name:'@kathy-test/init',version:this.version }
+            ],
+            registry:getDefaultRegistry(),
+            storeDir:this.storePath
+        })
 
     }
-    update(){
+    async update(){
+        console.log('upaet init')
+        console.log(await getNpmLatestVersion(this.pkgName).then().catch())
+    }
+     exist(){
+        // if(this.storePath){
+        //
+        // }else{
+           return  pathExists(this.targetPath)
+        // }
 
+    }
+    getRootFilePath(){
+const dir = pkgDir(this.targetPath)
+        if(dir){
+            const dirFile = require(path.resolve(dir,'package.json'))
+            console.log('dirfile',dirFile)
+            if(dirFile&&dirFile.main){
+                return formatPath(path.resolve(dir,dirFile.main))
+            }
+        }
+        console.log(dir)
     }
 }
 module.exports = Package;
