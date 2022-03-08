@@ -23,7 +23,7 @@ const pathExists = require('path-exists').sync
 async function core(argv) {
   // TODO
   try {
-    checkNodeVersion()
+    // checkNodeVersion()
     checkPackageVersion()
     checkRoot()
     checkUserHome()
